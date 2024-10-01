@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="POST" autocomplete="off">
+      <!-- Isian nama -->
+      <label for="nama">Nama :</label>
+      <input
+        type="text"
+        name="nama"
+        id="nama"
+        placeholder="masukkan nama lengkap"
+        required
+      />
+      <br />
+      <br />
+
+      <!-- Isian email -->
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" required />
+      <br />
+      <br />
+
+      <!-- Isian password -->
+      <label for="password">Password :</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        minlength="3"
+        maxlength="15"
+      />
+      <br />
+      <br />
+
+      <!-- Isian umur -->
+      <label for="umur">Umur :</label>
+      <input type="number" name="umur" id="umur" min="18" max="60" />
+      <br />
+      <br />
+
+      <!-- Isian tanggal lahir  -->
+      <input type="datetime-local" name="tanggallahir" />
+      <br />
+      <br />
+
+      <!-- Isian jenis kelamin -->
+      <label for="">
+        <input type="radio" name="gender" value="male" />Laki-laki</label
+      >
+      <label for="">
+        <input type="radio" name="gender" value="female" />Perempuan</label
+      >
+      <br />
+      <br />
+
+      <!-- Isian negara -->
+      <select name="country" id="">
+        <option value="Indonesia" selected>Indonesia</option>
+        <option value="malaysia">Malaysia</option>
+        <option value="korea selatan">Korea Selatan</option>
+        <option value="thailand">Thailand</option>
+        <option value="singapure">Singapure</option>
+      </select>
+      <br />
+      <br />
+
+      <textarea
+        name="comments"
+        rows="4"
+        cols="50"
+        placeholder="Masukkan komentar"
+      ></textarea>
+      <br />
+      <br />
+
+      <label for=""
+        ><input type="checkbox" name="terms" required />Saya setuju dengan
+        syarat dan ketentuan</label
+      >
+      <br />
+      <br />
+
+      <!-- <input type="submit" value="Kirim"> -->
+      <button type="submit" disabled>Kirim</button>
+      <button type="submit">Kirim</button>
+      <!-- <button type="reset">Reset</button> -->
+    </form>
+  </body>
+</html>
