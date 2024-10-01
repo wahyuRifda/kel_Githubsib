@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <style>
+        button:hover{
+            background-color: #EAD8B1;
+        }
+    </style>
+
+    <link rel="stylesheet" href="form.css">
+    
+</head>
+<body>
+    <form action="" method="POST" autocomplete="on" >
+        <label for="name">Nama :</label> <br>
+        <input type="text" id="name" name="name" placeholder="Isi dengan tepat" required/> <br> <br>
+
+        <label for="email">Email :</label> <br>
+        <input type="email" id="email" name="email" required=""/> <br> <br>
+
+        <label for="password">Password :</label> <br>
+        <input type="password" id="password" name="password" minlength=""> <br> <br>
+
+        <label for="umur">Umur :</label> <br>
+        <input type="number" id="number" name="number" min="18" max="60"/> <br> <br>
+        <input type="date" name=""/> <br> <br> 
+        <input type="time" name=""/> <br> <br> 
+
+        <label>Pilih Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Laki-laki</label><br>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Perempuan</label><br> <br>
+
+        <select name="Country" id="">
+                <option value="indonesia" selected>Indonesia</option>
+                <option value="malaysia">Malaysia</option>
+                <option value="singapura">singapura</option>
+                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                <option value="Jepang">Jepang</option>
+        </select> <br> <br>
+
+       
+        <label for="comment">Komentar:</label><br>
+        <textarea id="comment" name="comment" rows="5" cols="50" placeholder="Tulis komentar di sini..." required></textarea>
+        <br><br>
+
+         <input type="checkbox" id="disetuju" name="disetju" value="disetuju" required>
+         <label for="disetuju">Menyetujui syarat dan ketentuan</label><br>
+         <br><br>
+
+        <button type="submit" id="" name="" required>Pesan Tiket</button> 
+    </form>
+</body>
+</html>

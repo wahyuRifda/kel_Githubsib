@@ -1,0 +1,42 @@
+/* contoh selector tag pada eksternal */
+
+h3{
+    color: brown;
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15pt;
+}
+
+body{
+    background-color: orange;
+}
+
+ul, li{
+    text-decoration: none;
+}
+
+table{
+    padding: 5px;
+    border: 5px solid black;
+    
+}
+
+tr{
+    padding: 5px;
+    border: 1px solid red;
+}
+
+tr:hover{
+    background-color: tomato;
+    color: bisque;
+    font-size: 15pt;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#paragraph {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10;
+    color: blanchedalmond;
+}

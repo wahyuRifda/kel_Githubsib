@@ -1,0 +1,21 @@
+a {
+    text-decoration: dashed;
+}
+
+
+.gambar img{ 
+    margin-right: 20%;
+}
+
+.gambar p{
+    margin-right: 20%;
+}
+
+li{
+    margin: 10px 0;
+}
+
+h2{
+    border-bottom: 2px solid;
+    margin: 5px 0;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persetujuan Tugas1</title>
+</head>
+<body>
+    <h1></h1>
+    <form action="" method="POST">
+
+        <!--- nama lengkap-->
+
+            <label for="fullname">Nama Lengkap :</label> <br>
+            <input type="text" id="fullname" name="fullname" required placeholder="Nama Lengkap"/>
+            <br> <br>
+
+        <!--- email-->
+
+            <label for="email">Email :</label> <br>
+            <input type="email" id="email" name="email"  placeholder="example@email.com" required/>
+            <br> <br>
+
+         <!--- password-->
+
+            <label for="password">Password :</label> <br>
+            <input type="password" id="password" name="password" minlength="8" required/> 
+            <br> <br>
+
+         <!--- Tanggal lahir-->
+
+            <label for="birthdate">Tanggal Lahir :</label><br>
+            <input type="date" id="birthdate" name="birthdate" required>
+            <br><br>
+
+         <!--- Tanggal lahir-->
+
+            <label for="umur">Umur :</label><br>
+            <input type="number" id="umur" name="umur" min="18" required>
+            <br><br>
+
+         <!--- Jenis kelamin-->
+
+            <label>Pilih Gender:</label><br>
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Laki-laki</label><br>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Perempuan</label>
+            <br> <br>
+        
+
+         <!--- nomor telepon-->
+
+            <label for="phone">Nomor Telepon</label> <br>
+            <input type="tel" id="phone" name="phone" required placeholder="08xxxxxxxxxx" pattern="[0-9]{10,13}"/>
+            <br> <br>
+
+         <!--- unggah foto ptofil-->
+
+            <label for="photo" enctype="multipart/form-data">Unggah Foto:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+            <br><br>
+
+
+         <!--- persetujuan-->
+
+            <input type="checkbox" id="disetuju" name="disetju" value="disetuju" required>
+            <label for="disetuju">Menyetujui syarat dan ketentuan</label><br>
+            <br><br>
+
+
+        <button type="submit" id="" name="" required>Kirim</button>
+        <br> <br>
+        
+
+
+    </form>
+</body>
+</html>

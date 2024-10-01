@@ -1,0 +1,12 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button{
+    background-color: #EAD8B1;
+    color: 3A6D8C;
+}
+
+button:hover {
+    background-color: #6A9AB0;
+}

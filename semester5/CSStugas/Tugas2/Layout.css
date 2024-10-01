@@ -1,0 +1,22 @@
+body{
+    display: grid;
+    grid-gap: 10px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.left, .right {
+    background-color: #73EC8B;
+    padding: 20px;
+    text-align: center;
+}
+
+.main {
+    background-color: #73EC8B;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+}
