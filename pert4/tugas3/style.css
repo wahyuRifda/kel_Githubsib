@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #940000; /* Warna merah untuk header */
+    color: white;
+    text-align: center;
+    padding: 0px 0;
+    position: sticky; /* Membuat header tetap di atas saat scroll */
+    top: 0; /* Menempatkan header di bagian atas */
+    z-index: 1000; /* Memastikan header berada di atas konten lainnya */
+}
+
+
+.nav {
+    background-color: #f2f2f2; /* Warna abu-abu untuk navigasi */
+    text-align: center;
+    padding: 5px 0;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    display: flex; /* Menggunakan flexbox untuk layout konten */
+    margin: 20px 0; /* Margin untuk ruang antara elemen */
+}
+
+.content-left {
+    flex: 1; /* Mengambil ruang yang tersedia */
+    background-color: #e7f3fe; /* Warna  putih */
+    padding: 15px;
+    margin-right: 10px; /* Margin antara konten kiri dan tengah */
+}
+
+.main-content {
+    flex: 2; /* Mengambil ruang dua kali lipat dari konten samping */
+    background-color: #ffffff; /* Warna putih untuk konten utama */
+    padding: 15px;
+    margin-right: 10px; /* Margin antara konten tengah dan kanan */
+}
+
+.content-right {
+    flex: 1; 
+    background-color: #e7f3fe; 
+    padding: 15px;
+}
+
+.footer {
+    background-color: #940000; /* Warna merah untuk footer */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.ad-banner {
+    background-color: #ffcc00; /* Warna kuning untuk iklan */
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px; /* Margin atas untuk spasi dari konten di atasnya */
+}
