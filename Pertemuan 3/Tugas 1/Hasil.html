@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pendaftaran</title>
+
+    <script>
+        function tampilkanHasil() {
+            // Ambil data dari Local Storage
+            const nama = localStorage.getItem("nama");
+            const email = localStorage.getItem("email");
+            const password = localStorage.getItem("password");
+            const tgl_lahir = localStorage.getItem("tgl_lahir");
+            const umur = localStorage.getItem("umur");
+            const jenis_kelamin = localStorage.getItem("jenis_kelamin");
+            const telepon = localStorage.getItem("telepon");
+            const foto = localStorage.getItem("foto");
+            const persetujuan = localStorage.getItem("persetujuan");
+
+            // Tampilkan hasil
+            document.getElementById("hasil-nama").textContent = nama;
+            document.getElementById("hasil-email").textContent = email;
+            document.getElementById("hasil-password").textContent = password;
+            document.getElementById("hasil-tgl-lahir").textContent = tgl_lahir;
+            document.getElementById("hasil-umur").textContent = umur;
+            document.getElementById("hasil-jenis-kelamin").textContent = jenis_kelamin;
+            document.getElementById("hasil-telepon").textContent = telepon;
+            document.getElementById("hasil-foto").textContent = foto;
+            document.getElementById("hasil-persetujuan").textContent = persetujuan;
+        }
+
+        window.onload = tampilkanHasil;
+    </script>
+</head>
+<body style="background-color: #f0f8ff; font-family: Arial, sans-serif;">
+
+    <div style="width: 400px; margin: 50px auto; padding: 20px; background-color: #fff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+        <h2 style="text-align: center; color: #333;">Hasil Pendaftaran</h2>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Nama Lengkap:</strong> <span id="hasil-nama"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Email:</strong> <span id="hasil-email"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Password:</strong> <span id="hasil-password"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Tanggal Lahir:</strong> <span id="hasil-tgl-lahir"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Umur:</strong> <span id="hasil-umur"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Jenis Kelamin:</strong> <span id="hasil-jenis-kelamin"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Nomor Telepon:</strong> <span id="hasil-telepon"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Foto Profil:</strong> <span id="hasil-foto"></span></p>
+        <p style="font-size: 16px; margin-bottom: 10px;"><strong>Persetujuan:</strong> <span id="hasil-persetujuan"></span></p>
+    </div>
+
+</body>
+</html>

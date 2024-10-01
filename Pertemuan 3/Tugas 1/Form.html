@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #444;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="date"],
+        .form-container input[type="number"],
+        .form-container input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-container input[type="file"] {
+            padding: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <!-- JavaScript untuk menyimpan hasil form -->
+    <script>
+        function simpanHasil() {
+            // Ambil data dari form
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const tgl_lahir = document.getElementById("tgl_lahir").value;
+            const umur = document.getElementById("umur").value;
+            const jenis_kelamin = document.querySelector('input[name="jenis_kelamin"]:checked').value;
+            const telepon = document.getElementById("telepon").value;
+            const foto = document.getElementById("foto").files[0] ? document.getElementById("foto").files[0].name : "Tidak diunggah";
+            const persetujuan = document.getElementById("persetujuan").checked ? "Disetujui" : "Tidak disetujui";
+
+            // Simpan ke Local Storage
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("tgl_lahir", tgl_lahir);
+            localStorage.setItem("umur", umur);
+            localStorage.setItem("jenis_kelamin", jenis_kelamin);
+            localStorage.setItem("telepon", telepon);
+            localStorage.setItem("foto", foto);
+            localStorage.setItem("persetujuan", persetujuan);
+
+            return true; // lanjut ke halaman hasil
+        }
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Form Pendaftaran</h2>
+        <form action="hasil.html" method="get" onsubmit="return simpanHasil()">
+            <!-- Nama Lengkap -->
+            <label for="nama">Nama Lengkap:</label><br>
+            <input type="text" id="nama" name="nama" required minlength="3" placeholder="Masukkan nama lengkap">
+
+            <br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required placeholder="Masukkan email">
+
+            <br><br>
+
+            <!-- Password -->
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required minlength="8" placeholder="Masukkan password">
+
+            <br><br>
+
+            <!-- Tanggal Lahir -->
+            <label for="tgl_lahir">Tanggal Lahir:</label><br>
+            <input type="date" id="tgl_lahir" name="tgl_lahir" required>
+
+            <br><br>
+
+            <!-- Umur -->
+            <label for="umur">Umur:</label><br>
+            <input type="number" id="umur" name="umur" required min="18" placeholder="Masukkan umur">
+
+            <br><br>
+
+            <!-- Jenis Kelamin -->
+            <label>Jenis Kelamin:</label><br>
+            <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" required>
+            <label for="laki-laki">Laki-laki</label>
+            <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+            <label for="perempuan">Perempuan</label>
+
+            <br><br>
+
+            <!-- Nomor Telepon -->
+            <label for="telepon">Nomor Telepon:</label><br>
+            <input type="tel" id="telepon" name="telepon" pattern="[0-9]{10,13}" placeholder="Masukkan nomor telepon (10-13 digit)" required>
+
+            <br><br>
+
+            <!-- Foto Profil -->
+            <label for="foto">Unggah Foto Profil (opsional):</label><br>
+            <input type="file" id="foto" name="foto" accept="image/*">
+
+            <br><br>
+
+            <!-- Syarat dan Ketentuan -->
+            <label>
+                <input type="checkbox" id="persetujuan" name="persetujuan" required> Saya setuju dengan <a href="#">syarat dan ketentuan</a>.
+            </label>
+
+            <br><br>
+
+            <input type="submit" value="Daftar">
+        </form>
+    </div>
+
+</body>
+</html>
