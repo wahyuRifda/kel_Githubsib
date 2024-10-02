@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hitung Luas dan Keliling Lingkaran</h1>
+
+    <form>
+        <label for="jari">Jari-jari (cm):</label>
+        <input type="number" name="jari" required><br><br>
+        
+        <button type="button" onclick="hitungLingkaran(this.form)">Hitung</button>
+    </form>
+
+    <script>
+        function hitungLingkaran(form) {
+           
+            let jari = form.jari.value;
+
+            let pi = 3.14;
+
+            let luas = pi * jari * jari; 
+            let keliling = 2 * pi * jari;
+
+            document.write("Luas: " + luas + " cm²<br>");
+            document.write("Keliling: " + keliling + " cm<br>");
+        }
+    </script>
+</body>
+</html>

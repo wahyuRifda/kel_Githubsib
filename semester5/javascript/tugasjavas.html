@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas persegi panjang dan lingkaran</title>
+</head>
+<body>
+    <h1>Hitungan luas persegi panjang dan luas lingkaran</h1>
+
+            <script>
+                function luaspersegipanjang(panjang, lebar) {
+                    return panjang * lebar;
+                }
+
+
+                const luaslingkaran = (diameter) => { 
+                    let r = diameter / 2;
+                    return 3.14 * r * r;
+                }
+
+                let p = 12;
+                let l = 8;
+                let d = 7;
+
+
+                let hitungpersegipanjang = luaspersegipanjang(p, l);
+                let hitunglingkaran =  luaslingkaran(d);
+
+                document.write(`<p>Luas persegi panjang dengan panjang ${p} dan lebar ${l} adalah: ${hitungpersegipanjang}</p>`);
+                document.write(`<p>Luas lingkaran dengan diameter ${d} adalah: ${hitunglingkaran}</p>`);
+
+        </script>
+</body>
+</html>
