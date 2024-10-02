@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pemesanan Travel</title>
+    <link rel="stylesheet" href="travelAdek.css">
+</head>
+<body>
+    <h1 style="color: brown;"> Form Pemesanan Travel</h1>
+    <form>
+        <label style="color: brown;" for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label style="color: brown;" for="email">Email:</label>
+        <input type="email" id="email" name="email" 
+ required>
+
+        <label style="color: brown;" for="telp">Nomor Telepon:</label>
+        <input type="tel" id="telp" name="telp" required>
+
+        <label style="color: brown;" for="tanggal">Tanggal Keberangkatan:</label>
+        <input style="color: brown;" type="date" id="tanggal" name="tanggal" required>
+
+        <label style="color: brown;" for="waktu">Waktu Keberangkatan:</label>
+        <input type="time" id="waktu" name="waktu" required>
+
+        <label style="color: brown;" for="jumlah">Jumlah Penumpang:</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" required>
+
+        <label style="color: brown;" for="pembayaran">Pembayaran:</label>
+        <select id="pembayaran" name="pembayaran">
+            <option value="transfer">Transfer Bank</option>
+            </select>
+
+        <div>
+            <input type="checkbox" id="syarat" name="syarat" required>
+            <label style="color: brown;" for="syarat">Saya setuju dengan syarat & ketentuan</label>
+        </div>
+
+        <button  style="color: yellow;" type="submit">Pesan Tiket</button>
+    </form>
+</body>
+</html>

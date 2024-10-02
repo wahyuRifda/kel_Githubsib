@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket</title>
+    <style>
+        /* css internal*/
+
+        label{
+            padding: 20%;
+            margin: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1 action="" method="post">
+    <h1 style="color:pink; text-align: center;">Form Pemesanan Travel</h1>
+
+    <label for="fuulname">Nama Lengkap:</label>
+    <input type="text" name="fullname" id="fullname" required placeholder="Masukkan Nama Lengkap">
+    <br><br>
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" required placeholder="Masukkan Email">
+    <br><br>
+
+    <label for="nohp">Nomor Telephone</label>
+    <input type="number" name="nohp" id="nohp" required placeholder="Masukkan Nomor Telepon">
+    <br><br>
+
+    <label for="departure-date">Tanggal Keberangkatan</label>
+    <input type="date" name="departure-date" id="departure-date" required>
+    <br><br>
+
+    <label for="departue-time">Waktu Keberangkatan</label>
+    <select name="departure-time" id="departure-time" required>
+        <option value="08.00">08.00</option>
+        <option value="12.00">12.00</option>
+        <option value="18.00">18.00</option>
+    </select>
+    <br><br>
+
+    <label for="passengers">Jumlah Penumpang:</label>
+    <input type="number" name="passengers" id="passengers" min="1" max="6" required value="1">
+    <br><br>
+
+    <label for="payment">Pembayaran</label>
+    <select name="payment" id="payment" required>
+        <option value="Transfer-bank">Transfer-bank</option>
+        <option value="kartu-kredit">kartu-kredit</option>
+        <option value="E-wallet">E-wallet</option>
+    </select>
+    <br><br>
+
+    <label>
+        <input type="checkbox" name="terms" required>Saya setuju dengan syarat & ketentuan
+    </label>
+    <br><br>
+
+    <button type="submit">Pesan tiket</button>
+
+    </form>
+</body>
+</html>
