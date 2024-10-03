@@ -1,0 +1,23 @@
+<script>
+
+    let pelanggan = "Budi Santoso";
+    let totalbelanja = 1500000;
+    let keterangan = "";
+
+    if(totalbelanja > 10000000) {
+        keterangan = "selamat" + pelanggan + "dapat hadiah";
+    } else{
+        keterangan = "terima kasih sudah berbelanja";
+    }
+
+    document.write("Atas nama pelanggan : " + pelanggan + "<br>memiliki keterangan :" + keterangan);
+    document.write("<hr>");
+    document.write("contoh ternary <br>");
+
+    let deskripsi = (totalbelanja > 100000) ? "dapat hadiah" : "hanya ucapan terima kasih";
+    document.write(
+        "Atas nama pelanggan : " + pelanggan + 
+        "dengan total belanja " + totalbelanja +
+        " memiliki keterangan : " + deskripsi
+    )
+</script>

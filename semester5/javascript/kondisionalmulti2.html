@@ -1,0 +1,34 @@
+<script>
+    let pelanggan = "Juju";
+    let produk = "TV";
+
+    if(produk === "TV"){
+        harsat = 300000;
+    } else if (produk == "kulkas"){
+        harsat = 500000;
+    } else if (produk == "AC"){
+        harsat = 700000;
+    } else {
+        harsat = 0;
+    }
+
+    let harsat = 0;
+    switch(produk){
+        case 'TV': harsat = 300000; break;
+        case 'kulkas': harsat = 400000; break;
+        case 'AC': harsat = 500000; break;  
+        default: harsat = 0;  
+    }
+
+    let jumlahbeli = 10;
+    let totalharsat = harsat * jumlahbeli;
+    let  diskon = (produk == 'AC') ? 0.1 * totalharsat : 0;
+
+    document.write("data pembelian "+
+        + "<br>pelanggan : " + pelanggan 
+        + "<br>produk : " + produk 
+        + "<br>jumlah beli : " + jumlahbeli
+        + "<br>total harsat : " + totalharsat
+        + "<br>diskon : " + diskon
+    )
+</script>

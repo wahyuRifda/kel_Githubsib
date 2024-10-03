@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugasjavas2</title>
+</head>
+<body>
+    <script>
+        function hitungGaji(gol, statMenikah) {
+            let gaji;
+
+             if(gol === 1){
+                    gaji = 10000000;
+                } else if (gol == 2){
+                    gaji = 15000000;
+                } else if (gol == 3){
+                    gaji = 20000000;
+                } else {
+                    return "Golongan tidak valid.";
+                }
+
+
+            let tunjangan = (statMenikah && gol === 2) ? 2000000 : 0;
+
+            return gaji + tunjangan;
+        }
+
+            document.write("Gaji Golongan 3, belum Menikah: " + hitungGaji(3, true) + "<br>");
+            document.write("Gaji Golongan 2, Sudah Menikah: " + hitungGaji(2, true) + "<br>");
+            document.write("Gaji Golongan 1, Belum Menikah: " + hitungGaji(1, false) + "<br>");
+            document.write("Golongan Tidak Valid (4): " + hitungGaji(4, false) + "<br>");
+
+    </script>
+</body>
+</html>
