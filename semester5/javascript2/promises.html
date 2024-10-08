@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Promise</title>
+</head>
+
+<body>
+
+    <h1>Data Promise</h1>
+        <button onclick="fetchData()">Tekan</button>
+        <div id="result">Menunggu hasil...</div>
+
+        <script>
+            function fetchData() {
+                let promise = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let success = true;
+                        if (success) {
+                            resolve("Berhasil Menanti");
+                        } else {
+                            reject("Terjadi Kesalahan");
+                        }
+                    }, 2000);
+                });
+
+                promise
+                .then((data) => {
+                    document.getElementById("result").innerText = data;
+                })
+                .catch((error) => {
+                    document.getElementById("result").innerText = error;
+                });
+            }
+        </script>
+
+</body>
+</html>

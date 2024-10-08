@@ -1,0 +1,45 @@
+<script>
+
+let siswa = [
+    { 'nama': 'Gentar', 'nilai': 80 },
+    { 'nama': 'Sopan', 'nilai': 65 },
+    { 'nama': 'Sori', 'nilai': 58 },
+    { 'nama': 'Supra', 'nilai': 90 },
+    { 'nama': 'Glacier', 'nilai': 40 },
+    { 'nama': 'Frostfire', 'nilai': 77 }
+];
+
+
+let table = `<table border="1">
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nilai</th>
+                    <th>Keterangan</th>
+                    <th>Grade</th>
+                </tr>`;
+
+siswa.forEach((s, index) => {
+   
+    let keterangan = s.nilai >= 60 ? "Lulus" : "Tidak Lulus";
+    
+
+    let grade = s.nilai == 100 ? 'A' :
+                s.nilai >= 75 ? 'B' :
+                s.nilai >= 60 ? 'C' :
+                s.nilai >= 30 ? 'D' : 'E';
+    
+
+    table += `<tr>
+                <td>${index + 1}</td>
+                <td>${s.nama}</td>
+                <td>${s.nilai}</td>
+                <td>${keterangan}</td>
+                <td>${grade}</td>
+              </tr>`;
+});
+
+table += `</table>`;
+
+document.write(table);
+</script>

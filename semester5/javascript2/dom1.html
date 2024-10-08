@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ubah teks HMTL</title>
+</head>
+<body>
+       <!-- Elemen judul -->
+    <h1 id="judul">Selamat datang</h1>
+    <button onclick="ubahteks()">Ubah Teks Judul</button>
+
+    <!-- Elemen paragraf -->
+    <h1 id="paragraf1">Selamat datang</h1>
+    <button onclick="ubahgaya()">Ubah Gaya Paragraf</button>
+
+    <!-- Tempat menambah atau menghapus elemen -->
+    <div id="content">
+        <p id="paragraf2">Ini paragraf awal</p>
+    </div>
+    <button onclick="tambahelement()">Tambah Paragraf</button>
+    <button onclick="hapuselement()">Hapus Paragraf</button>
+
+    <script>
+        // Mengubah teks judul
+        function ubahteks(){
+            document.getElementById("judul").innerText = "Teks telah berubah";
+        }
+
+        // Mengubah gaya paragraf
+        function ubahgaya(){
+            document.getElementById("paragraf1").style.color = "red";
+            document.getElementById("paragraf1").style.fontSize = "20px";
+        }
+
+        // Menambahkan elemen paragraf baru
+        function tambahelement(){
+            let paragrafBaru = document.createElement("p");
+            paragrafBaru.innerText = "Ini paragraf baru";
+            document.getElementById("content").appendChild(paragrafBaru);
+        }
+
+        // Menghapus elemen paragraf yang ada di dalam div content
+        function hapuselement(){
+            let content = document.getElementById("content");
+            let paragraf = document.getElementById("paragraf2");
+
+            if(content.contains(paragraf)){
+                content.removeChild(paragraf);
+            } else {
+                alert("Paragraf tidak ditemukan");
+            }
+        }
+    </script>
+    
+</body>
+</html>

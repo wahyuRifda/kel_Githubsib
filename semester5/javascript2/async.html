@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+
+        <h1>Async</h1>
+        <button onclick="fetchData()">tekan</button>
+        <div id="result">Menunggu hasil...</div>
+        
+    <script>
+            async function fetchData() {
+                try {
+                    let result = await new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            let success = true;
+                            if (success) {
+                                resolve("Data Berhasil");
+                            } else {
+                                reject("Data Gagal");
+                            }
+                        }, 2000);  // Menunggu 2 detik
+                    });
+                    
+                    document.getElementById("result").innerText = result;
+                } catch (error) {
+                    document.getElementById("result").innerText = error;  // error sudah string, tidak perlu .message
+                }
+            }
+        </script>
+
+</body>
+</html>
