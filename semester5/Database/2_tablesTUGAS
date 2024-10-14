@@ -1,0 +1,80 @@
+Setting environment for using XAMPP for Windows.
+PF449@LENOVO c:\xampp8.2
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE sib17;
+Database changed
+MariaDB [sib17]> CREATE TABLE vendor (
+    ->     id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     nomor VARCHAR(20) NOT NULL,
+    ->     nama VARCHAR(50) NOT NULL,
+    ->     kode VARCHAR(20) NOT NULL,
+    ->     alamat VARCHAR(100) NOT NULL,
+    ->     kontak VARCHAR(50));
+Query OK, 0 rows affected (0.013 sec)
+
+MariaDB [sib17]> INSERT INTO vendor (nomor, nama, kode, alamat, kontak)
+    -> VALUES
+    -> ('1', 'Frostfire', 'A1', 'Jl. Kesana', '0123456789'),
+    -> ('2', 'Glacier', 'B1', 'Jl. Cipu', '0987654321'),
+    -> ('3', 'Supra', 'C1', 'Jl. Pondok', '0112233445'),
+    -> ('4', 'Sori', 'D1', 'Jl. Merdeka', '0556677889'),
+    -> ('5', 'Sopan', 'E1', 'Jl. Kenangan', '0667788990'),
+    -> ('6', 'Gentar', 'F1', 'Jl. Kenangan', '00099888776');
+Query OK, 6 rows affected (0.010 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> SELECT * FROM vendor;
++----+-------+-----------+------+--------------+-------------+
+| id | nomor | nama      | kode | alamat       | kontak      |
++----+-------+-----------+------+--------------+-------------+
+|  1 | 1     | Frostfire | A1   | Jl. Kesana   | 0123456789  |
+|  2 | 2     | Glacier   | B1   | Jl. Cipu     | 0987654321  |
+|  3 | 3     | Supra     | C1   | Jl. Pondok   | 0112233445  |
+|  4 | 4     | Sori      | D1   | Jl. Merdeka  | 0556677889  |
+|  5 | 5     | Sopan     | E1   | Jl. Kenangan | 0667788990  |
+|  6 | 6     | Gentar    | F1   | Jl. Kenangan | 00099888776 |
++----+-------+-----------+------+--------------+-------------+
+6 rows in set (0.003 sec)
+
+MariaDB [sib17]> CREATE TABLE pembelian (
+    ->     id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     tanggal DATE NOT NULL,
+    ->     nomor VARCHAR(20) NOT NULL,
+    ->     produk_id INT NOT NULL,
+    ->     jumlah INT NOT NULL,
+    ->     harga DOUBLE NOT NULL,
+    ->     vendor_id INT,
+    ->     FOREIGN KEY (vendor_id) REFERENCES vendor(id));
+Query OK, 0 rows affected (0.050 sec)
+
+MariaDB [sib17]> INSERT INTO pembelian (tanggal, nomor, produk_id, jumlah, harga, vendor_id) VALUES
+    -> ('2023-12-01', 'Pro1', 106, 7, 20000, 1),
+    -> ('2024-06-02', 'Pro2', 125, 14, 30000, 2),
+    -> ('2024-06-03', 'Pro3', 103, 15, 15000, 3),
+    -> ('2024-06-04', 'Pro4', 109, 20, 10000, 4),
+    -> ('2024-01-05', 'Pro5', 121, 27, 5000, 5),
+    -> ('2024-12-05', 'Pro5', 117, 20, 5000,6);
+Query OK, 6 rows affected (0.005 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> SELECT * FROM pembelian;
++----+------------+-------+-----------+--------+-------+-----------+
+| id | tanggal    | nomor | produk_id | jumlah | harga | vendor_id |
++----+------------+-------+-----------+--------+-------+-----------+
+|  1 | 2023-12-01 | Pro1  |       106 |      7 | 20000 |         1 |
+|  2 | 2024-06-02 | Pro2  |       125 |     14 | 30000 |         2 |
+|  3 | 2024-06-03 | Pro3  |       103 |     15 | 15000 |         3 |
+|  4 | 2024-06-04 | Pro4  |       109 |     20 | 10000 |         4 |
+|  5 | 2024-01-05 | Pro5  |       121 |     27 |  5000 |         5 |
+|  6 | 2024-12-05 | Pro5  |       117 |     20 |  5000 |         6 |
++----+------------+-------+-----------+--------+-------+-----------+
+6 rows in set (0.001 sec)
