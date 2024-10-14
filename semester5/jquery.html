@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+</head>
+<body>
+    <p class="p1">Selamat belajar JQuery</p>
+    <p class="p2">Selamat belajar JQuery</p>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){ //sejenis dengan declare function di JS
+            $(".p1").css("font-style", "italic");
+            $(".p2").css("font-weight", "bold");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+
+Setting environment for using XAMPP for Windows.
+PF449@LENOVO c:\xampp8.2
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE sib17;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> USE sib17;
+Database changed
+MariaDB [sib17]> show tables;;
+Empty set (0.001 sec)
+
+ERROR: No query specified
+
+MariaDB [sib17]> CREATE TABLE jenis(
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> nama VARCHAR(30) NOT NULL UNIQUE);
+Query OK, 0 rows affected (0.039 sec)
+
+MariaDB [sib17]> CREATE TABLE jenis(
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> nama VARCHAR(30) NOT NULL UNIQUE);
+ERROR 1050 (42S01): Table 'jenis' already exists
+MariaDB [sib17]> DESC jenis;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30) | NO   | UNI | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+2 rows in set (0.030 sec)
+
+MariaDB [sib17]> CREATE TABLE produk(
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> nama VARCHAR(30) NOT NULL UNIQUE,
+    -> harga double NOT NULL,
+    -> stok INT NOT NULL,
+    -> jenis_id INT NOT NULL REFERENCES jenis(id),
+    -> foto VARCHAR(255));
+ERROR 1050 (42S01): Table 'produk' already exists
+MariaDB [sib17]> DESC produk(
+    -> Bye
+
+PF449@LENOVO c:\xampp8.2
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE sib17;
+Database changed
+MariaDB [sib17]> show database:
+    -> Bye
+
+PF449@LENOVO c:\xampp8.2
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE sib17;
+Database changed
+MariaDB [sib17]> DESC produk;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nama     | varchar(30)  | NO   | UNI | NULL    |                |
+| harga    | double       | NO   |     | NULL    |                |
+| stok     | int(11)      | NO   |     | NULL    |                |
+| jenis_id | int(11)      | NO   |     | NULL    |                |
+| foto     | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.033 sec)
+
+MariaDB [sib17]> DESC jenis;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30) | NO   | UNI | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+2 rows in set (0.028 sec)
+
+MariaDB [sib17]> ALTER TABLE jenis
+    -> ADD COLUMN keterangan TEXT AFTER nama;
+Query OK, 0 rows affected (0.015 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> DESC jenis;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama       | varchar(30) | NO   | UNI | NULL    |                |
+| keterangan | text        | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.032 sec)
+
+MariaDB [sib17]> DESC jenis;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama       | varchar(30) | NO   | UNI | NULL    |                |
+| keterangan | text        | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.023 sec)
+
+MariaDB [sib17]> ALTER TABLE jenis CHANGE keterangan ket TEXT;
+Query OK, 0 rows affected (0.028 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> DESC jenis;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30) | NO   | UNI | NULL    |                |
+| ket   | text        | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+3 rows in set (0.026 sec)
+
+MariaDB [sib17]> ALTER TABLE jenis MODIFY ket VARCHAR(255) AFTER nama;
+Query OK, 0 rows affected (0.076 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> DESC jenis:
+    -> Bye
+
+PF449@LENOVO c:\xampp8.2
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 11
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE sib17;
+Database changed
+MariaDB [sib17]> DESC jenis;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30)  | NO   | UNI | NULL    |                |
+| ket   | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.020 sec)
+
+MariaDB [sib17]> ALTER TABLE jenis DROP COLUMN ket;
+Query OK, 0 rows affected (0.011 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> INSERT INTO jenis VALUES
+    -> ('','electronik'),
+    -> ('','makanan'),
+    -> ('','minuman'),
+    -> ('','furnitur');
+Query OK, 4 rows affected, 4 warnings (0.032 sec)
+Records: 4  Duplicates: 0  Warnings: 4
+
+MariaDB [sib17]> SELECT * FROM jenis;
++----+------------+
+| id | nama       |
++----+------------+
+|  1 | electronik |
+|  4 | furnitur   |
+|  2 | makanan    |
+|  3 | minuman    |
++----+------------+
+4 rows in set (0.005 sec)
+
+MariaDB [sib17]> desc produk;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nama     | varchar(30)  | NO   | UNI | NULL    |                |
+| harga    | double       | NO   |     | NULL    |                |
+| stok     | int(11)      | NO   |     | NULL    |                |
+| jenis_id | int(11)      | NO   |     | NULL    |                |
+| foto     | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.014 sec)
+
+('TV 21 inch', 2000000, 10, 1, 'foto1.jpg')' at line 2
+MariaDB [sib17]> INSERT INTO produk (nama, harga, stok, jenis_id, foto)
+    -> VALUES
+    -> ('TV 21 inch', 2000000, 10, 1, 'foto1.jpg');
+Query OK, 1 row affected (0.021 sec)
+
+MariaDB [sib17]> SELECT * FROM produk;
++----+------------+---------+------+----------+-----------+
+| id | nama       | harga   | stok | jenis_id | foto      |
++----+------------+---------+------+----------+-----------+
+|  1 | TV 21 inch | 2000000 |   10 |        1 | foto1.jpg |
++----+------------+---------+------+----------+-----------+
+1 row in set (0.002 sec)
+
+MariaDB [sib17]> INSERT INTO produk (nama, harga, stok, jenis_id, foto)
+    -> VALUES
+    -> ('nasi bakar', 200000, 20, 2, 'nasi.jpg'),
+    -> ('es cendol', 100000, 30, 3, 'es.jpg'),
+    -> ('kursi', 170000, 40, 4, 'kursi.jpg');
+Query OK, 3 rows affected (0.004 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+MariaDB [sib17]> SELECT * FROM produk;
++----+------------+---------+------+----------+-----------+
+| id | nama       | harga   | stok | jenis_id | foto      |
++----+------------+---------+------+----------+-----------+
+|  1 | TV 21 inch | 2000000 |   10 |        1 | foto1.jpg |
+|  2 | nasi bakar |  200000 |   20 |        2 | nasi.jpg  |
+|  3 | es cendol  |  100000 |   30 |        3 | es.jpg    |
+|  4 | kursi      |  170000 |   40 |        4 | kursi.jpg |
++----+------------+---------+------+----------+-----------+
+4 rows in set (0.000 sec)
+
+MariaDB [sib17]> UPDATE produk SET stok = 30 WHERE id =4;
+Query OK, 1 row affected (0.009 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [sib17]> SELECT * FROM produk;
++----+------------+---------+------+----------+-----------+
+| id | nama       | harga   | stok | jenis_id | foto      |
++----+------------+---------+------+----------+-----------+
+|  1 | TV 21 inch | 2000000 |   10 |        1 | foto1.jpg |
+|  2 | nasi bakar |  200000 |   20 |        2 | nasi.jpg  |
+|  3 | es cendol  |  100000 |   30 |        3 | es.jpg    |
+|  4 | kursi      |  170000 |   30 |        4 | kursi.jpg |
++----+------------+---------+------+----------+-----------+
+4 rows in set (0.000 sec)
+
+MariaDB [sib17]>
